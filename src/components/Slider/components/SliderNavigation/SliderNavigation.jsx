@@ -11,6 +11,9 @@ const SliderNavigation = (props) => {
      * '' (default) | 'tile'
      */
     mode = '',
+    /**
+     * '' (default) | 'abs-bottom'
+     */
     position = '',
     isHiddenMobile,
   } = props

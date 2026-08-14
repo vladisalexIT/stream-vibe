@@ -1,7 +1,7 @@
 .category-card {
   --categoryCardImagesGradientOpacity: 1;
 
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   padding: fluid(30, 20);
   background-color: var(--color-black-10);
@@ -32,12 +32,8 @@
     &::after {
       @include abs-cover;
 
-      content: "";
-      background-image: linear-gradient(
-        180deg,
-        rgba(26, 26, 26, 0) 0%,
-        var(--color-black-10) 101.79%
-      );
+      content: '';
+      background-image: linear-gradient(180deg, rgba(26, 26, 26, 0.00) 0%, var(--color-black-10) 101.79%);
       opacity: var(--categoryCardImagesGradientOpacity);
       transition-duration: var(--transition-duration);
     }
@@ -45,7 +41,6 @@
 
   &__image {
     width: 100%;
-    height: fluid(124, 68);
     object-fit: cover;
     border-radius: var(--border-radius-m);
 
@@ -62,6 +57,10 @@
   }
 
   &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: fluid-to-laptop(4, 2);
     font-size: inherit;
     font-weight: 600;
   }
