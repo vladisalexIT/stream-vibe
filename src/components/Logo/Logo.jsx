@@ -1,5 +1,7 @@
 import './Logo.scss'
 import classNames from 'classnames'
+import { getBaseUrl } from '@/utils/getBaseUrl'
+
 
 const Logo = (props) => {
     const {
@@ -9,13 +11,13 @@ const Logo = (props) => {
     const title = 'Home'
 
     return (
-        <a href="/"
+        <a href={getBaseUrl()}
             className={classNames(className, 'logo')}
             title={title}
             aria-label={title}
         >
             <img
-                src="/logo.svg"
+                src={getBaseUrl('logo.svg')}
                 alt=""
                 className="logo__image"
                 width={199}

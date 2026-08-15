@@ -1,5 +1,6 @@
 import Button from '@/components/Button'
 import './Hero.scss'
+import { getBaseUrl } from '@/utils/getBaseUrl'
 
 const Hero = () => {
     const titleId = 'hero-title'
@@ -15,7 +16,7 @@ const Hero = () => {
                         aria-label={playButtonTitle}
                         title={playButtonTitle}
                     >
-                        <img src="/play.svg" alt="" className="hero__play-button-image" width={470} height={470} />
+                        <img src={getBaseUrl('play.svg')} alt="" className="hero__play-button-image" width={470} height={470} />
                     </button>
                 </div>
             </div>

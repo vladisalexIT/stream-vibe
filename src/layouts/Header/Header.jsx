@@ -3,6 +3,7 @@ import Logo from '@/components/Logo'
 import classNames from 'classnames'
 import Button from '@/components/Button'
 import BurgerButton from '@/components/BurgerButton'
+import { getBaseUrl } from '@/utils/getBaseUrl'
 
 const Header = (props) => {
     const {
@@ -30,46 +31,70 @@ const Header = (props) => {
     ]
 
     return (
-        <header className={classNames('header', {
-            'is-fixed': isFixed,
-        })}
-            data-js-overlay-menu="">
+        <header
+            className={classNames('header', {
+                'is-fixed': isFixed,
+            })}
+            data-js-overlay-menu=""
+        >
             <div className="header__inner container">
                 <Logo
-                    className='header__logo'
-                    loading='eager'
+                    className="header__logo"
+                    loading="eager"
                 />
-                <dialog className="header__overlay-menu-dialog" data-js-overlay-menu-dialog="">
+
+                <dialog
+                    className="header__overlay-menu-dialog"
+                    data-js-overlay-menu-dialog=""
+                >
                     <nav className="header__menu">
                         <ul className="header__menu-list">
-                            {menuItems.map(({ label, href }, index) => (
-                                <li className="header__menu-item" key={index}>
-                                    <a
-                                        href={href}
-                                        className={classNames('header__menu-link', {
-                                            'is-active': href === url
-                                        })}>
-                                        {label}
-                                    </a>
-                                </li>
-                            ))}
+                            {menuItems.map(({ label, href }) => {
+                                const linkHref = href === '/'
+                                    ? getBaseUrl()
+                                    : getBaseUrl(href)
+
+                                return (
+                                    <li
+                                        className="header__menu-item"
+                                        key={href}
+                                    >
+                                        <a
+                                            href={linkHref}
+                                            className={classNames(
+                                                'header__menu-link',
+                                                {
+                                                    'is-active': href === url,
+                                                },
+                                            )}
+                                        >
+                                            {label}
+                                        </a>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </nav>
+
                     <div className="header__actions">
                         <Button
                             className="header__button"
                             label="Search"
                             isLabelHidden
                             mode="transparent"
-                            iconName="search" />
+                            iconName="search"
+                        />
+
                         <Button
                             className="header__button"
                             label="Notifications"
                             isLabelHidden
                             mode="transparent"
-                            iconName="notification" />
+                            iconName="notification"
+                        />
                     </div>
                 </dialog>
+
                 <BurgerButton
                     className="header__burger-button visible-tablet"
                     extraAttrs={{
@@ -82,4 +107,3 @@ const Header = (props) => {
 }
 
 export default Header
-

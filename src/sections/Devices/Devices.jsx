@@ -1,38 +1,39 @@
 import Section from '@/layouts/Section'
 import Grid from '@/components/Grid'
 import DeviceCard from '@/components/DeviceCard'
+import { getBaseUrl } from '@/utils/getBaseUrl'
 
 const Devices = () => {
   const deviceItems = [
     {
       title: 'Smartphones',
       description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-      imgSrc: '/devices/1.svg',
+      imgSrc: getBaseUrl('devices/1.svg'),
     },
     {
       title: 'Tablet',
       description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-      imgSrc: '/devices/2.svg',
+      imgSrc: getBaseUrl('devices/2.svg'),
     },
     {
       title: 'Smart TV',
       description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-      imgSrc: '/devices/3.svg',
+      imgSrc: getBaseUrl('devices/3.svg'),
     },
     {
       title: 'Laptops',
       description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-      imgSrc: '/devices/4.svg',
+      imgSrc: getBaseUrl('devices/4.svg'),
     },
     {
       title: 'Gaming Consoles',
       description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-      imgSrc: '/devices/5.svg',
+      imgSrc: getBaseUrl('devices/5.svg'),
     },
     {
       title: 'VR Headsets',
       description: 'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-      imgSrc: '/devices/6.svg',
+      imgSrc: getBaseUrl('devices/6.svg'),
     },
   ]
 
